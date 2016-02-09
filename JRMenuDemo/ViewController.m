@@ -83,11 +83,12 @@
     cell.CLICKITEMSBLOCK = ^(NSInteger itemIndex){
         switch (itemIndex) {
             case 0:
-                NSLog(@"0");
                 if ([self.thumbsArray containsObject:indexPath]) {
                     [self.thumbsArray removeObject:indexPath];
+                    NSLog(@"取消点赞");
                 }else{
                     [self.thumbsArray addObject:indexPath];
+                    NSLog(@"点赞");
                 }
                 [tableView reloadData];
                 break;
